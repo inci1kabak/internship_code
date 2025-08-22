@@ -16,14 +16,14 @@ CREATE TABLE SinavSonuclari (
     CONSTRAINT fk_kullanici FOREIGN KEY (kullanici_id) REFERENCES Kullanicilar(kullanici_id)
 );
 
--- Veri ekleme (INSERT örneği)
+-- Veri ekleme (INSERT)
 INSERT INTO Kullanicilar (kullanici_id, ad, soyad, email, kayit_tarihi)
 VALUES (1, 'Ali', 'Yılmaz', 'ali.yilmaz@example.com', SYSDATE);
 
 INSERT INTO SinavSonuclari (sonuc_id, kullanici_id, ders, puan)
 VALUES (101, 1, 'Veritabanı', 85);
 
--- Basit SELECT sorgusu
+-- SELECT sorgusu
 SELECT ad, soyad, email 
 FROM Kullanicilar;
 
@@ -101,6 +101,8 @@ RIGHT JOIN Depolar d ON ud.depo_id = d.depo_id;
 
 -- İndeks oluşturma (sorgu hızını artırmak için)
 CREATE INDEX idx_urun_adi ON Urunler(urun_adi);
+
+--------------------------------------------------------
 
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
